@@ -1,0 +1,19 @@
+<section class="wrapper">
+  <div *ngIf="loading" class="loading-spinner">
+    <img src='../../../assets/images/loader.gif' alt="loader">
+  </div>
+
+
+  <div class="cardContainer" *ngIf="!loading">
+    <div *ngFor="let user of users" class="card" [routerLink]="['/user', user.id]">
+      <div class="card-image">
+        <img src={{user.avatar}} alt="user">
+      </div>
+      <div class="card-content">
+        <h5>{{ user.first_name }} {{ user.last_name }}</h5>
+        <p>{{user.email}}</p>
+      </div>
+    </div>
+  </div>
+
+</section>

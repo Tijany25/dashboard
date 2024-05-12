@@ -1,0 +1,22 @@
+<section>
+  <div *ngIf="loading" class="loading-spinner">
+    <img src='../../../assets/images/loader.gif' alt="loader">
+  </div>
+  <div class="backBtn">
+    <img src='../../../assets/images/arror-back.svg' alt="arrow">
+    <div class="btnText" [routerLink]="['']">
+      back
+    </div>
+  </div>
+  <div class="cardContainer" *ngIf="!loading">
+    <div *ngIf="user" class="card">
+      <div class="card-image">
+        <img src={{user.avatar}} alt="user">
+      </div>
+      <div class="card-content">
+        <h5>{{ user.first_name }} {{ user.last_name }}</h5>
+        <p><a href={{user.email}}>{{user.email}}</a></p>
+      </div>
+    </div>
+  </div>
+</section>
